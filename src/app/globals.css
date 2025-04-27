@@ -1,0 +1,55 @@
+/* Purpose	Color Hex Code	Description
+Background color	#3f3f3f	Dark gray, main background
+Primary text (headlines, labels)	#ffffff	Pure white, for text on dark background
+Accent (strings, highlights)	#c0392b	Deep red, detective-style red string color
+Secondary text / muted text	#b0b0b0	Light gray, for less important text
+Cards / Panels background	#2e2e2e	Darker gray, to create depth between sections
+Shadows / Soft borders	#1f1f1f	Very dark gray, soft separation for elements */
+
+@import "tailwindcss";
+
+:root {
+  overflow-x: hidden;
+  background-color: var(--color-gray-dark);
+}
+@layer base {
+  @font-face {
+    font-family: "zendots-regular";
+    src: url("/fonts/zendots-regular.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "ebgaramond-regular";
+    src: url("/fonts/EBGaramond-Regular.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "ebgaramond-semibold";
+    src: url("/fonts/EBGaramond-SemiBold.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "ebgaramond-medium";
+    src: url("/fonts/EBGaramond-Medium.ttf") format("truetype");
+  }
+}
+
+@theme {
+  --font-zendots-regular: "zendots-regular", sans-serif;
+  --font-ebgaramond-regular: "ebgaramond-regular", sans-serif;
+  --font-ebgaramond-semibold: "ebgaramond-semibold", sans-serif;
+  --font-ebgaramond-medium: "ebgaramond-medium", sans-serif;
+  --color-gray-dark: #3f3f3f;
+}
+
+@utility special-font-zendots {
+  font-family: zendots-regular;
+  font-feature-settings: "ss01" 1;
+  b {
+    font-feature-settings: "ss01" 0;
+  }
+}
+
+@utility special-font-ebgaramond {
+  b {
+    font-family: ebgaramond-regular;
+    font-feature-settings: "ss01" 1;
+  }
+}
