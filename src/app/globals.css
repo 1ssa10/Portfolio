@@ -29,6 +29,10 @@ Shadows / Soft borders	#1f1f1f	Very dark gray, soft separation for elements */
     font-family: "ebgaramond-medium";
     src: url("/fonts/EBGaramond-Medium.ttf") format("truetype");
   }
+  @font-face {
+    font-family: "zentry";
+    src: url("/fonts/zentry-Regular.woff2") format("woff2");
+  }
 }
 
 @theme {
@@ -36,20 +40,23 @@ Shadows / Soft borders	#1f1f1f	Very dark gray, soft separation for elements */
   --font-ebgaramond-regular: "ebgaramond-regular", sans-serif;
   --font-ebgaramond-semibold: "ebgaramond-semibold", sans-serif;
   --font-ebgaramond-medium: "ebgaramond-medium", sans-serif;
+  --font-zentry: "zentry", sans-serif;
+  --font-bebas-neue: "bebas-neue", sans-serif;
   --color-gray-dark: #3f3f3f;
+  --color-detective-red: #c0392b;
 }
 
-@utility special-font-zendots {
-  font-family: zendots-regular;
-  font-feature-settings: "ss01" 1;
+@utility special-font {
   b {
-    font-feature-settings: "ss01" 0;
+    font-family: zentry;
+    font-feature-settings: "ss01" on;
   }
 }
 
-@utility special-font-ebgaramond {
-  b {
-    font-family: ebgaramond-regular;
-    font-feature-settings: "ss01" 1;
-  }
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+
+.new-section {
+  @apply relative h-dvh w-screen flex-center mt-10;
 }
